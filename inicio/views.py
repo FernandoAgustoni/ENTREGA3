@@ -34,7 +34,7 @@ def crear_Celular_2 (request):
 
 def celular(request):
     
-    autos= celular.objects.all ()
+    Celular= Celular.objects.all ()
     
     
     return render (request,"celular", {"celular":celular})
