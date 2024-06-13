@@ -1,0 +1,36 @@
+
+{% extends "base.html" %}
+
+{% block title_head  %}
+Crear Celular
+{% endblock title_head  %}
+
+{% block h1_header  %}
+Pasaste por aca
+{% endblock  %}}
+
+
+{% block main %}
+<form actions= {% url "CrearCelular_2" %} method= "POST">
+    {% csrf_token %}
+    <p>
+        Marca:
+        <input type ="text" name= "Marca" placeholder = "Marca">
+    <p>
+
+
+    <p>
+        Modelo:
+        <input type ="text" name= "Modelo" >
+    <p>    
+
+     {{formulario}}
+        
+    <input type="submit" values = "Enviar">
+
+
+</form >   
+
+
+
+{% endblock main %}
