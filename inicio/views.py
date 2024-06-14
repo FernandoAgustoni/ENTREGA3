@@ -9,9 +9,9 @@ def inicio(request):
      return HttpResponse ("Bienvenidos a la tienda de celulares")
     
 def crear_celulares (request, marca, modelo):
-    celular = celular (marca= marca, modelo = modelo)
+    celular = Celular (marca= marca, modelo = modelo)
     celular.save ()
-    return render(request,"celulares.html", {"celualr": celular})
+    return render(request,"crear_celular.html", {"celular": Celular})
 
 def crear_Celular_2 (request):
     
@@ -25,16 +25,16 @@ def crear_Celular_2 (request):
       formulario = CrearCelularFormulario(request.POST)
       if formulario.is_valid ():
        datos = formulario.cleaned_data   
-       celular= celular (marca=datos.get ("marca"), modelo= datos.get ("modelo"))
+       celular= Celular (marca=datos.get ("marca"), modelo= datos.get ("modelo"))
        celular.save()
        return redirect ("celular")
     
    
-    return render (request, "Crearcelular_2.html_2",{"formulario": formulario} )
+    return render (request, "Crear_Celular_2.html",{"formulario": formulario} )
 
 def celular(request):
     
-    Celular= Celular.objects.all ()
+    celular= Celular.objects.all ()
     
     
-    return render (request,"celular", {"celular":celular})
+    return render (request,"celulares", {"Celulares":celular})

@@ -1,6 +1,33 @@
 {% extends "base.html" %}
 
+{% block title_head  %}
+Celular 
+{% endblock title_head  %}
+
+{% block h1_header  %}
+Listado de Celulares
+{% endblock  %}}
+
 
 {% block main %}
-se creo el celular {{celular.marca}} {{celular.modelo}}
+
+
+{% if autos %}
+
+    <ul>
+    
+    {% for auto in autos %}
+    
+       <li> {{auto}}</li>
+          
+       {% endfor %}
+    
+    </ul> 
+    
+{% else %}    
+<p> No hay celulares creados </p>
+{% endif %}
+
+
+
 {% endblock main %}

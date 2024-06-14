@@ -19,11 +19,9 @@ from django.urls import path
 from inicio import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.inicio, name="inicio"),
-    path("celular/", views.celular, name="celulares"),
-    path("crearCelular_2/", views.crear_Celular_2, name="crear_celular_2"),
-    path("crear_celulares/", views.crear_celulares, name="crear_celulares"),
- 
+    path("inicio",views.inicio, name= "inicio"),
+    path("crear_celular/<str:marca>/<str:modelo>/",views.crear_celulares, name="crear_celulares"),
+    path("Crear_Celular_2/",views.crear_Celular_2 ,name="crear_Celular_2"),
+    path("celulares",views.celular, name= "celular")
 ]
-
 
