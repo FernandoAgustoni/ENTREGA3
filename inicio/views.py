@@ -5,8 +5,8 @@ from django.template import Template, Context, loader
 from inicio.models import Celular
 import random
 from inicio.forms import CrearCelularFormulario
-def inicio(request):
-     return HttpResponse ("Bienvenidos a la tienda de celulares")
+def inicio(request ):
+  return render(request, 'inicio/index.html')
     
 def crear_celulares (request, marca, modelo):
     celular = Celular (marca= marca, modelo = modelo)

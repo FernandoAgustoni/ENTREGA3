@@ -1,0 +1,4 @@
+{% extends "base.html" %}
+{% block h_1 header  %}
+BIENVENIDOS A LA TIENDA DE CELULARES
+{% endblock h_1 header %}
