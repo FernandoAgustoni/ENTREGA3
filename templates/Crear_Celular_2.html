@@ -11,22 +11,12 @@ Pasaste por aca
 
 
 {% block main %}
-<form actions= {% url "CrearCelular_2" %} method= "POST">
+<form actions= {% url "Crear_Celular_2,html" %} method= "POST">
     {% csrf_token %}
-    <p>
-        Marca:
-        <input type ="text" name= "Marca" placeholder = "Marca">
-    <p>
-
-
-    <p>
-        Modelo:
-        <input type ="text" name= "Modelo" >
-    <p>    
-
-     {{formulario}}
+    
+    {{formulario}}
         
-    <input type="submit" values = "Enviar">
+<input type="submit" values = "Enviar">
 
 
 </form >   

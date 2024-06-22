@@ -6,12 +6,8 @@ from inicio.models import Celular
 import random
 from inicio.forms import CrearCelularFormulario
 def inicio(request ):
-  return render(request, 'inicio/index.html')
+  return render(request, 'inicio')
     
-def crear_celulares (request, marca, modelo):
-    celular = Celular (marca= marca, modelo = modelo)
-    celular.save ()
-    return render(request,"crear_celular.html", {"celular": Celular})
 
 def crear_Celular_2 (request):
     
@@ -37,4 +33,4 @@ def celular(request):
     celular= Celular.objects.all ()
     
     
-    return render (request,"celulares", {"Celulares":celular})
+    return render (request,"celulares.html", {"Celulares":celular})
